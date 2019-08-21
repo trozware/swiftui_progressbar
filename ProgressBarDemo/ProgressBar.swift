@@ -12,6 +12,9 @@ struct ProgressBar: View {
     @Binding var currentValue: Double
     @Binding var barWidth: CGFloat
 
+    // Adjust these settings to suit
+    var barHeight: CGFloat = 12
+    var barInset: CGFloat = 2
     var backColor = Color(UIColor.secondarySystemBackground)
     var foreColor = Color.accentColor
 
@@ -23,15 +26,15 @@ struct ProgressBar: View {
 
     var body: some View {
         ZStack {
-            RoundedRectangle(cornerRadius: 6)
-                .frame(width: barWidth, height: 12)
+            RoundedRectangle(cornerRadius: barHeight / 2)
+                .frame(width: barWidth, height: barHeight)
                 .foregroundColor(backColor)
 
-            RoundedRectangle(cornerRadius: 4)
-                .frame(width: innerWidth(), height: 8)
+            RoundedRectangle(cornerRadius: (barHeight - (barInset * 2)) / 2)
+                .frame(width: innerWidth(), height: barHeight - (barInset * 2))
                 .foregroundColor(foreColor)
-                .padding(.leading, 2)
-                .padding(.trailing, barWidth - innerWidth() - 2)
+                .padding(.leading, barInset)
+                .padding(.trailing, barWidth - innerWidth() - barInset)
         }
         .frame(minHeight: 0, maxHeight: 20)
         .frame(width: barWidth)

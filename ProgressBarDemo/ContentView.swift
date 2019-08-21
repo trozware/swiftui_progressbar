@@ -47,8 +47,7 @@ struct ChangeButtons: View {
                 Button(action: { self.progress = Double(self.buttonNumbers[index]) }) {
                     Text("\(self.buttonNumbers[index])")
                         .font(.headline)
-                        .padding(10)
-
+                        .frame(width: 50, height: 50)
                 }
                 .modifier(ButtonStyling())
             }
@@ -59,7 +58,6 @@ struct ChangeButtons: View {
 struct ButtonStyling: ViewModifier {
     func body(content: Content) -> some View {
         content
-            .frame(width: 50)
             .background(Color.blue)
             .foregroundColor(.white)
             .cornerRadius(15)
