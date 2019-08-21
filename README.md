@@ -20,9 +20,9 @@ ContentView.swift contains an example of how to use it with a slider and quick a
 
 ContentView.swift also contains an example of using a ViewModifer struct to apply a set of modifiers to a View.
 
---
+---
 
 ## Change Log:
 
-22nd August 2019: reset repository due to gitignore issues leaving out vital files.
-21st August 2019: changed project name to avoid namespace conflicts in Xcode 11, beta 6.
+- 22nd August 2019: reset repository due to gitignore issues leaving out vital files.
+- 21st August 2019: changed project name to avoid namespace conflicts in Xcode 11, beta 6.
